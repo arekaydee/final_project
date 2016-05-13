@@ -1,3 +1,80 @@
+// var c1 = "rgb(251,174,23)";
+// var c2 = "rgb(241,90,36)";
+// var c3 = "rgb(190,141,48)";
+// var c4 = "white";
+//
+// var cMajor = [130.8, 146.8, 164.8, 174.6, 196, 220, 247, 261.6,
+// 293.7, 329.6, 349.2, 392, 440, 493.9, 523.3, 587.3];
+//
+// var cMinor = [130.8, 146.8, 155.6, 174.6, 196, 207.7, 233.1, 261.6,
+// 293.7, 311.1, 349.2, 392, 415.3, 466.2, 523.3, 587.3];
+//
+// var tones = [];
+// var osc;
+//
+// for(var i = 0; i < 16; i++){
+// 	osc = new p5.SinOsc();
+// 	osc.amp(0);
+// 	osc.start();
+// 	tones.push(osc);
+// }
+//
+// function ToneKey(x,y,z){
+// 	this.x = x;
+// 	this.y = y;
+// 	this.length = 100;
+// 	this.z = cMajor[0];
+//
+// 	this.display = function(){
+// 		fill(c2);
+//
+// 		if(mouseX > this.x && mouseX < this.x + 100 && mouseY > this.y && mouseY < this.y + 100){
+// 			fill(c3);
+// 			//add oscillation when pressed
+// 			if(mouseIsPressed){
+// 				fill(c4);
+// 				tones[0].amp(0.5, 0.01);
+// 			}else{
+// 				tones[0].amp(0, 0.01);
+// 			}
+//     }
+// 		rect(this.x,this.y, this.length, this.length);
+// 	}
+// }
+//
+//
+// var toneKeys = [];
+//
+// function setup(){
+// 	createCanvas(680,1146);
+// 	background(c1);
+// 	noStroke();
+//
+// //buttons
+//
+//  for(var i = 0; i < 4; i++){
+// 	 for(var j = 0; j < 4; j++){
+// 		 var keyX = 100 + i*120;
+// 		 var keyY = 230 + j*120;
+//      var keyZ = cMajor[0];
+//
+// 		 toneKeys.push(new ToneKey(keyX, keyY, keyZ));
+//
+// 	 }
+//  }
+//
+// //oscillation
+//
+//
+// }
+//
+// function draw(){
+// 	for(var i = 0; i < toneKeys.length; i++){
+// 		toneKeys[i].display();
+// 	}
+// }
+
+
 var c1 = "rgb(251,174,23)";
 var c2 = "rgb(241,90,36)";
 var c3 = "rgb(190,141,48)";
@@ -38,7 +115,7 @@ function setup(){
 
 	fill(c2);
 	textSize(24)
-	text('delay rate \ndelay time',40,125);
+	text('delay rate \ndelay time',100,125);
 
 	osc1 = new p5.Oscillator();
 	osc1.setType('sine');
@@ -117,11 +194,11 @@ function setup(){
 	// volume1Slide.style('width','80px');
 	//
 	delay1Slide = createSlider(0,99,0);
-	delay1Slide.position(210,107);
+	delay1Slide.position(225,108);
 	delay1Slide.style('width','200px');
 
 	delay1Slide2 = createSlider(0,99,0);
-	delay1Slide2.position(210,137);
+	delay1Slide2.position(225,138);
 	delay1Slide2.style('width','200px');
 
 	del1 = new p5.Delay();
@@ -135,12 +212,11 @@ function setup(){
 
 
 	banner();
-	waveForm();
 
 }
 
 function draw(){
-increment1(40,260);
+increment1(90,180);
 
 // var vol1 = volume1Slide.value();
 // channel1.setVolume(vol1*.01);
@@ -441,12 +517,12 @@ function increment1(x,y){
 	strokeWeight(1);
 	stroke(c2);
 		for(var i = 0; i<5; i = i+1){
-			line(x+(i*140),y,x+(i*140),y+20);
+			line(x+(i*120),y,x+(i*120),y+20);
 			}
 		for(var i = 0; i<40; i = i+1){
-			line(x+(i*14),y,x+(i*14),y+12);
+			line(x+(i*12),y,x+(i*12),y+12);
 			}
 		for(var i = 0; i<80; i = i+1){
-			line(x+(i*7),y,x+(i*7),y+8);
+			line(x+(i*6),y,x+(i*6),y+8);
 			}
 }
